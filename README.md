@@ -119,6 +119,7 @@ Import file:
 Download here: **[tms.postman_collection.json](./tms.postman_collection.json)**
 
 Datebase schema diagram(ER diagram):
-  ![image alt](https://github.com/sekharchowdary774/tms-cargopro.ai/blob/671c8a52557aa189418b02308f69e9bb4b92eb5c/tms.drawio.png)
+  ![image alt](https://raw.githubusercontent.com/sekharchowdary774/tms-cargopro.ai/671c8a52557aa189418b02308f69e9bb4b92eb5c/tms.drawio.png)
+
 
     
