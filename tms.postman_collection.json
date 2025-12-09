@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "82b0fca0-3d45-41ab-889d-1a489cf7673f",
+		"name": "tms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49088846",
+		"_collection_link": "https://sekharkamma5-2036230.postman.co/workspace/sekhar's-Workspace~be7baa70-281b-4160-8943-699f8b7cfe01/collection/49088846-82b0fca0-3d45-41ab-889d-1a489cf7673f?action=share&source=collection_link&creator=49088846"
+	},
+	"item": [
+		{
+			"name": "/load",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"shipperId\": \"SHIP001\",\r\n  \"loadingCity\": \"Vijayawada\",\r\n  \"unloadingCity\": \"Hyderabad\",\r\n  \"loadingDate\": \"2025-02-20T10:00:00Z\",\r\n  \"productType\": \"FMCG\",\r\n  \"weight\": 1500,\r\n  \"weightUnit\": \"KG\",\r\n  \"truckType\": \"Open\",\r\n  \"noOfTrucks\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/load",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"load"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/load?shipperId=SHIP001",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/load?shipperId=SHIP001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"load"
+					],
+					"query": [
+						{
+							"key": "shipperId",
+							"value": "SHIP001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/load?status=POSTED",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/load?status=POSTED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"load"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "POSTED"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/load?both",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/load?shipperId=SHIP001&status=POSTED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"load"
+					],
+					"query": [
+						{
+							"key": "shipperId",
+							"value": "SHIP001"
+						},
+						{
+							"key": "status",
+							"value": "POSTED"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transporter",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"companyName\": \"ABC Logistics\",\r\n  \"rating\": 4.5,\r\n  \"availableTrucks\": [\r\n    { \"truckType\": \"Open\", \"count\": 10 },\r\n    { \"truckType\": \"Container\", \"count\": 5 }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transporter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transporter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transport(from id)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transporter/ba757797-7dc4-45d3-9104-34a5a7209445",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transporter",
+						"ba757797-7dc4-45d3-9104-34a5a7209445"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transporter/{id}/trucks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{id}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"companyName\": \"ABC Logistics\",\r\n  \"rating\": 4.5,\r\n  \"availableTrucks\": [\r\n    { \"truckType\": \"Open\", \"count\": 20 },\r\n    { \"truckType\": \"Trailer\", \"count\": 3 }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transporter/{{id}}/trucks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transporter",
+						"{{id}}",
+						"trucks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/submitbid",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"loadId\": \"83683754-ec67-4e0c-8a00-e3ab14bb809f\",\r\n  \"transporterId\": \"b71c7649-8c50-441f-98bd-c36ead7fa366\",\r\n  \"proposedRate\": 2500,\r\n  \"trucksOffered\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/bid/details",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bid/32452e14-cd50-49f9-9d2f-58d16e6e11ef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bid",
+						"32452e14-cd50-49f9-9d2f-58d16e6e11ef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/bid/filterdetails",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bid?loadId=83683754-ec67-4e0c-8a00-e3ab14bb809f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bid"
+					],
+					"query": [
+						{
+							"key": "loadId",
+							"value": "83683754-ec67-4e0c-8a00-e3ab14bb809f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/bid/reject",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bid/32452e14-cd50-49f9-9d2f-58d16e6e11ef/reject",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bid",
+						"32452e14-cd50-49f9-9d2f-58d16e6e11ef",
+						"reject"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/best-bids",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/load/{{loadid}}/best-bids",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"load",
+						"{{loadid}}",
+						"best-bids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"bidId\": \"5f2c32af-ae7d-4e82-9b92-92082d4aad74\",\r\n   \"allocatedTrucks\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/booking/details",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/booking/{{bookingid}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"booking",
+						"{{bookingid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/booking//cancel",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/booking/{{bookingid}}/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"booking",
+						"{{bookingid}}",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "loadid",
+			"value": ""
+		},
+		{
+			"key": "bookingid",
+			"value": ""
+		}
+	]
+}
