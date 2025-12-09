@@ -116,6 +116,6 @@ All APIs are fully tested using Postman.
 Import file:
 
 ## 🧪 Postman Collection  
-Download here: **[tms.postman_collection.json](./TMS.postman_collection.json)**
+Download here: **[tms.postman_collection.json](./tms.postman_collection.json)**
 
     
