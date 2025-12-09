@@ -119,7 +119,7 @@ Import file:
 Download here: **[tms.postman_collection.json](./tms.postman_collection.json)**
 
 Datebase schema diagram(ER diagram):
-  
+   <img width="782" height="721" alt="Image" src="https://github.com/user-attachments/assets/785cfc8c-c923-4ef2-9ba3-fc4d277e3023" />  
 
 
 
