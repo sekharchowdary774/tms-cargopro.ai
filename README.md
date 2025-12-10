@@ -22,6 +22,10 @@ All business rules and API requirements from the assignment have been fully impl
 ## 🧱 Architecture  
 controller → dto → entity → enums → exception → repository → service
 
+## Database schema diagram (ER diagram)
+![diagram](https://raw.githubusercontent.com/sekharchowdary774/tms-cargopro.ai/main/tms.drawio.png)
+****
+
 ## 🛠️ Setup Instructions
 
 ### 1️⃣ Clone the Repository
@@ -118,9 +122,6 @@ Import file:
 ## 🧪 Postman Collection  
 Download here: **[tms.postman_collection.json](./tms.postman_collection.json
 
-## Database schema diagram (ER diagram)
-
-![diagram](https://raw.githubusercontent.com/sekharchowdary774/tms-cargopro.ai/main/tms.drawio.png)
 
   
 
