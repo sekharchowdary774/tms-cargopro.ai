@@ -26,6 +26,14 @@ controller → dto → entity → enums → exception → repository → service
 ![diagram](https://raw.githubusercontent.com/sekharchowdary774/tms-cargopro.ai/main/tms.drawio.png)
 ****
 
+Postman Collection
+
+All APIs are fully tested using Postman.
+
+Import file:
+
+## 🧪 Postman Collection  
+Download here: **[tms.postman_collection.json](./tms.postman_collection.json
 ## 🛠️ Setup Instructions
 
 ### 1️⃣ Clone the Repository
@@ -113,14 +121,7 @@ Simultaneous bookings → one succeeds, one fails
 ✔ Rule 5 — Best-Bid Calculation
    score = (1 / proposedRate) * 0.7 + (rating / 5) * 0.3
    Sorted in descending order.
-Postman Collection
 
-All APIs are fully tested using Postman.
-
-Import file:
-
-## 🧪 Postman Collection  
-Download here: **[tms.postman_collection.json](./tms.postman_collection.json
 
 
   
